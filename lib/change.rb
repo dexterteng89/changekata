@@ -7,7 +7,7 @@ class Change
       num_of_coin = total_pennies / coin
       num_of_coin.times do 
         array << coin
-	total_pennies -= coin
+      	total_pennies -= coin
       end
     end
     array

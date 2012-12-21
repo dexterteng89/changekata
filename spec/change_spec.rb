@@ -34,4 +34,18 @@ describe Change do
 			change.make_change_for(2.43).should == [25, 25, 25, 25, 25, 25, 25, 25, 25, 10, 5, 1, 1, 1]
 		end
 	end
+
+	context 'for invalid parameters' do
+		it 'returns [] when given 0' do
+			change.make_change_for(0).should == []
+		end
+
+		it 'returns nil when given negative numbers' do
+			change.make_change_for(-10).should be_nil
+		end
+
+		it 'returns nil when given anything other than numbers' do
+			change.make_change_for(:wtf).should be_nil
+		end
+	end
 end
