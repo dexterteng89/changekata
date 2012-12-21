@@ -48,4 +48,10 @@ describe Change do
 			change.make_change_for(:wtf).should be_nil
 		end
 	end
+
+  context 'for money larger than $5.00' do
+  	it 'returns [500, 25, 10, 5]' do
+  		change.make_change_for(5.40).should == [500, 25, 10, 5]
+  	end
+  end
 end
