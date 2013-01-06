@@ -54,4 +54,10 @@ describe Change do
   		change.make_change_for(5.40).should == [500, 25, 10, 5]
   	end
   end
+
+  context 'different currency systems' do
+  	it 'lets you define different currency systems' do
+  		change.make_change_for(0.05, coins: [2,1]).should == [2,2,1]
+  	end
+  end
 end
